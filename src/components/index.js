@@ -8,7 +8,8 @@ import CollectionOverview from "./collectionOverview/collectionOverview.componen
 import CollectionPreview from "./collectionPreview/collectionPreview.components";
 import MenuItem from "./Menu-item/menu-home.components";
 import CollectionItem from "./collectionItem/collectionItem.components";
-
+import News from "./News/news.components";
+import Footer from "./Footer/footer.components";
 export {
 	Header,
 	SectionOne,
@@ -20,4 +21,6 @@ export {
 	MenuItem,
 	CollectionItem,
 	CollectionPreview,
+	News,
+	Footer,
 };

@@ -1,15 +1,15 @@
 import React from "react";
-import { OverViewContainer } from "./collectionPreview.style";
+import { PreviewContainer } from "./collectionPreview.style";
 import { CollectionItem } from "../index";
 const CollectionPreview = ({ items, id }) => {
 	return (
-		<OverViewContainer>
+		<PreviewContainer>
 			{items
 				.filter((item, ind) => ind < 1)
 				.map((item) => (
 					<CollectionItem key={id} item={item} />
 				))}
-		</OverViewContainer>
+		</PreviewContainer>
 	);
 };
 

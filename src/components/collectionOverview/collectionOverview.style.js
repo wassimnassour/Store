@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const PreviewContainer = styled.div`
+export const OverViewContainer = styled.div`
 display: flex;
 flex-direction: column;
 width: 90%;

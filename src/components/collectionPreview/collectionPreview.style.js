@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const OverViewContainer = styled.div`
+export const PreviewContainer = styled.div`
 	width: auto;
 `;

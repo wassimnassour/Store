@@ -13,7 +13,9 @@ const App = (props) => {
 				<Router>
 					<GLobelStyle />
 					<All.Header />
+
 					<HomePage />
+					<All.Footer />
 				</Router>
 			</Provider>
 		</>
