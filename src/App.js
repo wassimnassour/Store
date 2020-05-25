@@ -1,15 +1,17 @@
-import React from 'react';
-
-import {GLobelStyle} from './globelStyle.style'
-;
+import React from "react";
+import * as All from "./components/index";
+import { GLobelStyle } from "./globelStyle.style";
+import { BrowserRouter as Router, Rout, Switch } from "react-router-dom";
 
 const App = (props) => {
-  return (
-    <>
-    <GLobelStyle />
-  
-  </>
-  )
-}
+	return (
+		<>
+			<Router>
+				<All.Header />
+				<GLobelStyle />
+			</Router>
+		</>
+	);
+};
 
 export default App;
