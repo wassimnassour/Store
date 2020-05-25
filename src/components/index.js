@@ -4,4 +4,20 @@ import SectionTwo from "./sectionTwo/sectionTwo.components";
 import SectionZero from "./sectionZero/sectionZero.components";
 import SectionFour from "./sectionFour/sectionFour.components";
 import Button from "./Button/button.components";
-export { Header, SectionOne, SectionTwo, SectionZero, SectionFour, Button };
+import CollectionOverview from "./collectionOverview/collectionOverview.components";
+import CollectionPreview from "./collectionPreview/collectionPreview.components";
+import MenuItem from "./Menu-item/menu-home.components";
+import CollectionItem from "./collectionItem/collectionItem.components";
+
+export {
+	Header,
+	SectionOne,
+	SectionTwo,
+	CollectionOverview,
+	SectionZero,
+	SectionFour,
+	Button,
+	MenuItem,
+	CollectionItem,
+	CollectionPreview,
+};

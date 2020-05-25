@@ -4,15 +4,18 @@ import { GLobelStyle } from "./globelStyle.style";
 import HomePage from "./pages/Home/home.components";
 
 import { BrowserRouter as Router, Rout, Switch } from "react-router-dom";
-
+import { Provider } from "react-redux";
+import { Store } from "./redux/index";
 const App = (props) => {
 	return (
 		<>
-			<Router>
-				<GLobelStyle />
-				<All.Header />
-				<HomePage />
-			</Router>
+			<Provider store={Store}>
+				<Router>
+					<GLobelStyle />
+					<All.Header />
+					<HomePage />
+				</Router>
+			</Provider>
 		</>
 	);
 };
