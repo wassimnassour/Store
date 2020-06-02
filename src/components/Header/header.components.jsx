@@ -1,33 +1,72 @@
 import React from "react";
-import { HeaderContainer, Li, Logo, HeaderButton } from "./header.style";
+import { HeaderContainer, A, Logo, HeaderButton } from "./header.style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-const Header = (props) => {
-	const Search = <FontAwesomeIcon icon={faSearch} />;
+import {
+	faSearch,
+	faUserCircle,
+	faShoppingBag,
+} from "@fortawesome/free-solid-svg-icons";
+import { Search } from "../index";
+import { withRouter } from "react-router-dom";
+import { AddSearchField, CloseModal } from "../../redux/index";
+
+import { connect } from "react-redux";
+
+const Header = ({ location, AddSearchField, CloseModal, items, openModel }) => {
+	const search = <FontAwesomeIcon icon={faSearch} />;
+	const Account = <FontAwesomeIcon icon={faUserCircle} />;
+	const Bag = <FontAwesomeIcon icon={faShoppingBag} />;
+	const cheeck = location.pathname === "/" ? true : false;
+	console.log(cheeck);
 	return (
-		<HeaderContainer>
-			<div>
+		<>
+			<HeaderContainer
+				color={cheeck ? "white" : "black"}
+				boxShadow={cheeck}
+			>
+				<Logo>
+					{" "}
+					<A to="/">MODNIKKY</A>
+				</Logo>
 				<ul>
-					<Li>NEW ARRIVALS</Li>
-					<Li>SHOP</Li>
-					<Li>COLLECTIONS</Li>
+					<li>
+						<A>NEW ARRIVALS</A>
+					</li>
+					<li>
+						<A>SHOP</A>
+					</li>
+
+					<li>
+						<A>COLLECTIONS</A>
+					</li>
 				</ul>
-			</div>
-			<div>
-				<Logo>MODNIKKY</Logo>
-			</div>
-			<div>
+
+				<div></div>
+				<Search clicked={CloseModal} open={openModel} />
 				<ul>
-					<HeaderButton>
-						{" "}
-						<span>{Search}</span>SEARCH
-					</HeaderButton>
-					<Li>SIGNIN</Li>
-					<HeaderButton> BAG(2)</HeaderButton>
+					<li>
+						<HeaderButton onClick={CloseModal}>
+							<span>{search}</span>
+						</HeaderButton>
+					</li>
+					<li>
+						<A>{Account}</A>
+					</li>
+
+					<li>
+						<HeaderButton>{Bag}</HeaderButton>
+					</li>
 				</ul>
-			</div>
-		</HeaderContainer>
+			</HeaderContainer>
+		</>
 	);
 };
 
-export default Header;
+const mapDispatchToProps = {
+	AddSearchField: (text) => AddSearchField(text),
+	CloseModal,
+};
+const mapStateToProps = (state) => ({
+	items: state.shop.SearchResult,
+});
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

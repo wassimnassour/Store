@@ -10,6 +10,8 @@ import MenuItem from "./Menu-item/menu-home.components";
 import CollectionItem from "./collectionItem/collectionItem.components";
 import News from "./News/news.components";
 import Footer from "./Footer/footer.components";
+import Search from "./Search/search.components";
+import BackDrop from "./BackDrop/backdrop.components";
 export {
 	Header,
 	SectionOne,
@@ -23,4 +25,6 @@ export {
 	CollectionPreview,
 	News,
 	Footer,
+	Search,
+	BackDrop,
 };

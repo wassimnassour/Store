@@ -7,11 +7,7 @@ const HomePage = (props) => {
 	return (
 		<HomePageContainer>
 			<All.SectionZero />
-
-			<All.MenuItem />
-			<All.SectionOne />
 			<All.CollectionOverview />
-			<All.SectionFour />
 		</HomePageContainer>
 	);
 };

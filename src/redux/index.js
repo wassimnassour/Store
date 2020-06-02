@@ -1,3 +1,5 @@
 import Store from "./store";
 import { selectItemsForPreview } from "./Shop/shop.reselect";
-export { Store, selectItemsForPreview };
+import { AddSearchField, CloseModal } from "./Shop/shop.action";
+
+export { Store, selectItemsForPreview, AddSearchField, CloseModal };

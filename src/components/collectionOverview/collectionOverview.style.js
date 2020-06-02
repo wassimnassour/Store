@@ -14,6 +14,7 @@ flex-wrap:wrap;
 justify-content:center;
 
 
+
   
 }`;
 export const Title = styled.h2`

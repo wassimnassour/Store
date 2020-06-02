@@ -8,7 +8,7 @@ const MenuItem = (props) => {
 	return (
 		<MenuHomeContainer>
 			{images.map((img) => (
-				<img src={img} alt="fashion" />
+				<img src={img} alt="fashion" key={Math.random() + 1} />
 			))}
 		</MenuHomeContainer>
 	);
