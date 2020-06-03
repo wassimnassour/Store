@@ -13,7 +13,7 @@ export const CollectionContainer = styled.div`
 
 		& .img {
 			margin: 0.6rem;
-			flex: 1 1 25%;
+			flex: 1 1 250px;
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
