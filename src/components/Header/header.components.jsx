@@ -17,7 +17,6 @@ const Header = ({ location, AddSearchField, CloseModal, items, openModel }) => {
 	const Account = <FontAwesomeIcon icon={faUserCircle} />;
 	const Bag = <FontAwesomeIcon icon={faShoppingBag} />;
 	const cheeck = location.pathname === "/" ? true : false;
-	console.log(cheeck);
 	return (
 		<>
 			<HeaderContainer
@@ -37,7 +36,7 @@ const Header = ({ location, AddSearchField, CloseModal, items, openModel }) => {
 					</li>
 
 					<li>
-						<A>COLLECTIONS</A>
+						<A to="/collection/hats">COLLECTIONS</A>
 					</li>
 				</ul>
 

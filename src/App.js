@@ -4,7 +4,7 @@ import { GLobelStyle } from "./globelStyle.style";
 import { Provider } from "react-redux";
 import { Store } from "./redux/index";
 import { Route, Switch } from "react-router-dom";
-import { HomePage, Product } from "./pages/index";
+import { HomePage, Product, CollectionPage } from "./pages/index";
 
 const App = (props) => {
 	return (
@@ -14,7 +14,17 @@ const App = (props) => {
 				<All.Header />
 				<Switch>
 					<Route exact path="/" component={HomePage} />
-					<Route path="/product/:productName" component={Product} />
+
+					<Route
+						exact
+						path="/product/:productName"
+						component={Product}
+					/>
+
+					<Route
+						path="/collection/:CollectionName"
+						component={CollectionPage}
+					/>
 				</Switch>
 				<All.Footer />
 			</Provider>

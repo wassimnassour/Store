@@ -46,12 +46,12 @@ const SHOP_DATA = {
         imageUrl: "https://i.ibb.co/bLB646Z/red-beanie.png",
         price: 18,
       },
-      {
-        id: 8,
-        name: "Wolf Cap",
-        imageUrl: "https://i.ibb.co/1f2nWMM/wolf-cap.png",
-        price: 14,
-      },
+      // {
+      //   id: 8,
+      //   name: "Wolf Cap",
+      //   imageUrl: "https://i.ibb.co/1f2nWMM/wolf-cap.png",
+      //   price: 14,
+      // },
       {
         id: 9,
         name: "Blue Snapback",

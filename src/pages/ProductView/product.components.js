@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 const Product = ({ collection, location, match }) => {
 	const items = collection.map((item) => item.items).flat();
-	const item = items.find((item) => item.id === match.params.productName);
+	const item = items.find((item) => item.id == match.params.productName);
 
 	return (
 		<ItemContainer>

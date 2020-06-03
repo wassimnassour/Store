@@ -8,6 +8,7 @@ const HomePage = (props) => {
 		<HomePageContainer>
 			<All.SectionZero />
 			<All.CollectionOverview />
+			<All.News />
 		</HomePageContainer>
 	);
 };

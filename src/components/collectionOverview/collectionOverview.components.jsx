@@ -5,7 +5,6 @@ import { CollectionPreview } from "../index";
 import { selectItemsForPreview } from "../../redux/index";
 import { OverViewContainer, Preview, Title } from "./collectionOverview.style";
 const CollectionOverview = ({ collection }) => {
-	console.log(collection);
 	return (
 		<OverViewContainer>
 			<Title>Collection</Title>
