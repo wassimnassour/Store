@@ -4,5 +4,7 @@ export const GLobelStyle = createGlobalStyle`
 body {
 	margin :0;
 	padding:0;
+	font-family: 'Overlock', cursive;
+	overflow-x:hidden;
 }
 `;
