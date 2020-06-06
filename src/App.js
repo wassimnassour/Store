@@ -4,7 +4,7 @@ import { GLobelStyle } from "./globelStyle.style";
 import { Provider } from "react-redux";
 import { Store } from "./redux/index";
 import { Route, Switch } from "react-router-dom";
-import { HomePage, Product, CollectionPage } from "./pages/index";
+import { HomePage, Product, CollectionPage, CartPage } from "./pages/index";
 
 const App = (props) => {
 	return (
@@ -25,6 +25,7 @@ const App = (props) => {
 						path="/collection/:CollectionName"
 						component={CollectionPage}
 					/>
+					<Route path="/Cart" component={CartPage} />
 				</Switch>
 				<All.Footer />
 			</Provider>

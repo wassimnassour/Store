@@ -6,13 +6,28 @@ import {
 	faUserCircle,
 	faShoppingBag,
 } from "@fortawesome/free-solid-svg-icons";
-import { Search } from "../index";
+import { Search, Cart } from "../index";
 import { withRouter } from "react-router-dom";
-import { AddSearchField, CloseModal } from "../../redux/index";
+import {
+	AddSearchField,
+	CloseModal,
+	OpenAndCloseModel,
+	SelectModal,
+	Selecquantitiy,
+} from "../../redux/index";
 
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
-const Header = ({ location, AddSearchField, CloseModal, items, openModel }) => {
+const Header = ({
+	location,
+	AddSearchField,
+	CloseModal,
+	openModel,
+	OpenAndCloseModel,
+	BagModal,
+	quantity,
+}) => {
 	const search = <FontAwesomeIcon icon={faSearch} />;
 	const Account = <FontAwesomeIcon icon={faUserCircle} />;
 	const Bag = <FontAwesomeIcon icon={faShoppingBag} />;
@@ -29,10 +44,10 @@ const Header = ({ location, AddSearchField, CloseModal, items, openModel }) => {
 				</Logo>
 				<ul>
 					<li>
-						<A>NEW ARRIVALS</A>
+						<A to="/collection/hats">NEW ARRIVALS</A>
 					</li>
 					<li>
-						<A>SHOP</A>
+						<A to="/collection/hats">SHOP</A>
 					</li>
 
 					<li>
@@ -49,11 +64,16 @@ const Header = ({ location, AddSearchField, CloseModal, items, openModel }) => {
 						</HeaderButton>
 					</li>
 					<li>
-						<A>{Account}</A>
+						<A to="/signin">{Account}</A>
 					</li>
 
 					<li>
-						<HeaderButton>{Bag}</HeaderButton>
+						<Cart />
+						<HeaderButton onClick={OpenAndCloseModel}>
+							{Bag}
+
+							<span className="cart">{quantity}</span>
+						</HeaderButton>
 					</li>
 				</ul>
 			</HeaderContainer>
@@ -64,8 +84,10 @@ const Header = ({ location, AddSearchField, CloseModal, items, openModel }) => {
 const mapDispatchToProps = {
 	AddSearchField: (text) => AddSearchField(text),
 	CloseModal,
+	OpenAndCloseModel,
 };
-const mapStateToProps = (state) => ({
-	items: state.shop.SearchResult,
+const mapStateToProps = createStructuredSelector({
+	BagModal: SelectModal,
+	quantity: Selecquantitiy,
 });
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

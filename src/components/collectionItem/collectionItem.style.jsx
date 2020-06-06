@@ -18,7 +18,7 @@ export const ItemContainer = styled.div`
 		width: 100%;
 		height: 100%;
 		left: 0;
-		z-index: 100;
+		z-index: 2;
 		top: 0;
 		a {
 			color: white;

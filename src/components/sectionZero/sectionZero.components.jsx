@@ -1,8 +1,8 @@
 import React from "react";
 import { SectionZeroContainer, ShowCaseInfo } from "./sectionZero.style";
-import Image2 from "../../assets/image4.jpg";
+import Image2 from "../../assets/image2.jpg";
 import Button from "../Button/button.components";
-
+import { Link } from "react-router-dom";
 const SectionZero = (props) => {
 	return (
 		<SectionZeroContainer img={Image2}>
@@ -14,10 +14,13 @@ const SectionZero = (props) => {
 					style heritage  that’s liberating, sexy, comfy and supremely
 					cool.{" "}
 				</p>
-				<Button>SHOP NEW ARRIVALS</Button>
+				<Link to="collection/hats">
+					<Button>SHOP NEW ARRIVALS</Button>{" "}
+				</Link>
 			</ShowCaseInfo>
 		</SectionZeroContainer>
 	);
 };
 
 export default SectionZero;
+//

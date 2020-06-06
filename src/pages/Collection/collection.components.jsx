@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { CollectionContainer } from "./collection.style.js";
 import { createStructuredSelector } from "reselect";
 import { selectItemsForPreview } from "../../redux/index";
@@ -15,34 +15,34 @@ const CollectionPage = ({ collections, match }) => {
 	return (
 		<CollectionContainer>
 			{collection ? (
-				<>
-					<div className="collectionNav">
-						<h4>collection</h4>
-						<ul>
-							{collections.map((CollectionName) => (
-								<li>
-									<Link
-										to={`/collection/${CollectionName.title}`}
-									>
-										{CollectionName.title}
-									</Link>
-								</li>
-							))}
-						</ul>
-					</div>
-					<div className="collectionPreview">
-						{collection.items.map((item) => (
-							<div className="img">
-								<img src={item.imageUrl} />
-								<div className="buttons">
-									<Link to={`/product/${item.id}`}>
-										<button>Shop Now </button>
-									</Link>
-								</div>
-							</div>
+				<div className="collectionNav">
+					<h4>collection</h4>
+					<ul>
+						{collections.map((CollectionName) => (
+							<li key={CollectionName.id}>
+								<Link
+									to={`/collection/${CollectionName.title}`}
+								>
+									{CollectionName.title}
+								</Link>
+							</li>
 						))}
-					</div>
-				</>
+					</ul>
+				</div>
+			) : null}
+			{collection ? (
+				<div className="collectionPreview">
+					{collection.items.map((item) => (
+						<div className="img" key={item.id}>
+							<img src={item.imageUrl} alt={item.name} />
+							<div className="buttons">
+								<Link to={`/product/${item.id}`}>
+									<button>Shop Now </button>
+								</Link>
+							</div>
+						</div>
+					))}
+				</div>
 			) : (
 				"somthing went wrong"
 			)}
