@@ -26,6 +26,10 @@ const App = (props) => {
 						component={CollectionPage}
 					/>
 					<Route path="/Cart" component={CartPage} />
+					<Route
+						path="*"
+						render={() => <h1>this page is not found</h1>}
+					/>
 				</Switch>
 				<All.Footer />
 			</Provider>
