@@ -7,7 +7,7 @@ const CollectionPreview = ({ title, items, id }) => {
 			{items
 				.filter((item, ind) => ind < 1)
 				.map((item) => (
-					<CollectionItem key={id} title={title} item={item} />
+					<CollectionItem key={item.id} title={title} item={item} />
 				))}
 		</PreviewContainer>
 	);

@@ -1,6 +1,5 @@
 import React from "react";
 import { FooterContainer, FooterInfo, FooterWrapper } from "./footer.style";
-import { News } from "../index";
 const Footer = (props) => {
 	return (
 		<FooterContainer>
