@@ -10,6 +10,7 @@ import Footer from "./Footer/footer.components";
 import Search from "./Search/search.components";
 import BackDrop from "./BackDrop/backdrop.components";
 import Cart from "./Cart/cart.components";
+
 export {
 	Header,
 	CollectionOverview,
