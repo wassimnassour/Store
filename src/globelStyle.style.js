@@ -6,5 +6,6 @@ body {
 	padding:0;
 	font-family: 'Overlock', cursive;
 	overflow-x:hidden;
+	box-sizing: border-box;
 }
 `;
