@@ -7,8 +7,10 @@ export const FooterContainer = styled.footer`
 	margin: auto;
 	font-weight: 400;
 
-	bottom: 0;
 	width: 100%;
+
+	left: 0;
+	bottom: 0;
 `;
 
 export const FooterWrapper = styled.div`

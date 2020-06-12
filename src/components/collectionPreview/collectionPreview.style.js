@@ -5,4 +5,5 @@ export const PreviewContainer = styled.div`
 	margin: 8px;
 	height: 278px;
 	position: relative;
+	
 `;

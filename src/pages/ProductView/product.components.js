@@ -25,7 +25,7 @@ const Product = ({ collection, location, match, AddToCart, quantity }) => {
 					</ItemInfo>
 				</>
 			) : (
-				"	Somthing Went Wrong"
+				"	this  Product is not in the list"
 			)}
 		</ItemContainer>
 	);
