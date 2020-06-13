@@ -11,6 +11,7 @@ import Search from "./Search/search.components";
 import BackDrop from "./BackDrop/backdrop.components";
 import Cart from "./Cart/cart.components";
 import SignIn from "./SignIn/signin.component";
+import SignUp from "./SignUp/signup.component";
 export {
   Header,
   CollectionOverview,
@@ -25,4 +26,5 @@ export {
   Cart,
   SignIn,
   FormInput,
+  SignUp,
 };
