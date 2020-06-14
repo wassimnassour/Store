@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { SignInContainer, SignInWrapper } from "./signin.style";
 import { FormInput } from "../index";
-const SignIn = () => {
+import {
+  SignInWithEMailStart,
+  SignInWithGoogleSucces,
+} from "../../redux/User/user.action";
+import { connect } from "react-redux";
+const SignIn = ({ SignInWithEMailStart, SignInWithGoogleSucces }) => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
+  const submit = (e) => {
+    e.preventDefault();
+    console.log("irts wormk");
+    SignInWithEMailStart();
+  };
   return (
-    <SignInContainer>
+    <SignInContainer onSubmit={submit}>
       <SignInWrapper>
         <h1> WelCome Back </h1>
 
@@ -26,7 +36,12 @@ const SignIn = () => {
           required
         />
 
-        <button className="submit-button">Login</button>
+        <button
+          className="submit-button"
+          onClick={() => SignInWithEMailStart()}
+        >
+          Login
+        </button>
         <button>Sign In With gooogle </button>
         <span>
           Dont have Account ?{" "}
@@ -35,8 +50,11 @@ const SignIn = () => {
           </a>
         </span>
       </SignInWrapper>
+      09+
     </SignInContainer>
   );
 };
-
-export default SignIn;
+const mapDispatchToProps = {
+  SignInWithEMailStart,
+};
+export default connect(null, mapDispatchToProps)(SignIn);

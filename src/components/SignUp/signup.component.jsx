@@ -40,8 +40,8 @@ const SignUp = () => {
           name="Confirmpassword"
           type="password"
           label="Confirm password"
-          value={Password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={Confirmpassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
         <button className="submit-button">Sign Up</button>

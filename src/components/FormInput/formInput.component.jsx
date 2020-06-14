@@ -5,7 +5,6 @@ import {
   GroupContainer,
 } from "./formInput.style";
 const FormInput = ({ label, value, ...otheprops }) => {
-  console.log(value.length);
   return (
     <GroupContainer>
       <FormInputContainer {...otheprops} />
