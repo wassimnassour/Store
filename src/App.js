@@ -11,7 +11,7 @@ import {
   CartPage,
   ErrorPage,
 } from "./pages/index";
-import { SignIn } from "./components/index";
+import { SignIn, SignUp } from "./components/index";
 const App = (props) => {
   return (
     <>
@@ -29,6 +29,7 @@ const App = (props) => {
           />
           <Route path="/Cart" component={CartPage} />
           <Route path="/signin" component={SignIn} />
+          <Route path="/signup" component={SignUp} />
           <Route path="*" component={ErrorPage} />
         </Switch>
         <All.Footer />
