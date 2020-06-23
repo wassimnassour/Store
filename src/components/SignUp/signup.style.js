@@ -8,7 +8,7 @@ export const SignInContainer = styled.div`
   flex-direction: column;
 `;
 
-export const SignInWrapper = styled.form`
+export const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
 
@@ -42,6 +42,12 @@ export const SignInWrapper = styled.form`
     a {
       text-decoration: none;
       color: #0073ff;
+    }
+    .error {
+      margin-top: 5px;
+      font-size: 0.875rem;
+      color: #db1802;
+      font-weight: 400;
     }
   }
 `;

@@ -1,21 +1,43 @@
-import React, { useState } from "react";
+import React from "react";
 import { SignInContainer, SignInWrapper } from "./signin.style";
 import { FormInput } from "../index";
-import {
-  SignInWithEMailStart,
-  SignInWithGoogleSucces,
-} from "../../redux/User/user.action";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { SignInWithEmailStart, SignInWithGoogleStart } from "../../redux/index";
 import { connect } from "react-redux";
-const SignIn = ({ SignInWithEMailStart, SignInWithGoogleSucces }) => {
-  const [Email, setEmail] = useState("");
-  const [Password, setPassword] = useState("");
-  const submit = (e) => {
-    e.preventDefault();
-    console.log("irts wormk");
-    SignInWithEMailStart();
+import { auth } from "../../Firebase/firebase";
+const SignIn = ({ SignInWithEmailStart, SignInWithGoogleStart, dispatch }) => {
+  const initialValues = {
+    password: "",
+    email: "",
   };
+  const submit = (values) => {
+    const { email, password } = values;
+    SignInWithEmailStart({ email, password });
+  };
+
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .required("email is required")
+      .email("invlaid Format email"),
+
+    password: Yup.string()
+      .required("No password provided.")
+      .min(8, "Password is too short - should be 8 chars minimum."),
+  });
+  const errors = {
+    password: "",
+    email: "",
+  };
+  const formik = useFormik({
+    initialValues,
+    onSubmit: submit,
+    validationSchema,
+    errors,
+  });
+
   return (
-    <SignInContainer onSubmit={submit}>
+    <SignInContainer onSubmit={formik.handleSubmit}>
       <SignInWrapper>
         <h1> WelCome Back </h1>
 
@@ -23,26 +45,38 @@ const SignIn = ({ SignInWithEMailStart, SignInWithGoogleSucces }) => {
           name="email"
           type="email"
           label="Email"
-          value={Email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
+          value={formik.values.email}
+          error={
+            formik.touched.email && formik.errors.email
+              ? formik.errors.email
+              : null
+          }
+          {...formik.getFieldProps("email")}
         />
         <FormInput
           name="password"
           type="password"
           label="password"
-          value={Password}
-          onChange={(e) => setEmail(e.target.value)}
-          required
+          value={formik.values.password}
+          error={
+            formik.touched.password && formik.errors.password
+              ? formik.errors.password
+              : null
+          }
+          {...formik.getFieldProps("password")}
         />
 
-        <button
-          className="submit-button"
-          onClick={() => SignInWithEMailStart()}
-        >
+        <button className="submit-button" type="submit">
           Login
         </button>
-        <button>Sign In With gooogle </button>
+        <button
+          type="button"
+          onClick={() => {
+            SignInWithGoogleStart();
+          }}
+        >
+          Sign In With gooogle{" "}
+        </button>
         <span>
           Dont have Account ?{" "}
           <a href="/signup" className="signup-link">
@@ -50,11 +84,11 @@ const SignIn = ({ SignInWithEMailStart, SignInWithGoogleSucces }) => {
           </a>
         </span>
       </SignInWrapper>
-      09+
     </SignInContainer>
   );
 };
 const mapDispatchToProps = {
-  SignInWithEMailStart,
+  SignInWithEmailStart: (user) => SignInWithEmailStart(user),
+  SignInWithGoogleStart,
 };
 export default connect(null, mapDispatchToProps)(SignIn);

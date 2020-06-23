@@ -4,17 +4,14 @@ import {
   FormInputLabel,
   GroupContainer,
 } from "./formInput.style";
-const FormInput = ({ label, value, ...otheprops }) => {
+const FormInput = ({ label, value, error, ...otheprops }) => {
   return (
     <GroupContainer>
       <FormInputContainer {...otheprops} />
-      {label ? (
-        <FormInputLabel className={value.length ? "shrink" : ""}>
-          {label}
-        </FormInputLabel>
-      ) : null}
+      {label ? <FormInputLabel>{label}</FormInputLabel> : null}
+      <div className="error">{error}</div>
     </GroupContainer>
   );
 };
-
+// className={value.length ? "shrink" : ""}
 export default FormInput;
