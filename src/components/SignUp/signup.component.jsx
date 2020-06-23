@@ -1,59 +1,119 @@
-import React, { useState } from "react";
-import { SignInContainer, SignInWrapper } from "./signup.style";
+import React from "react";
+import { SignInContainer, FormWrapper } from "./signup.style";
 import { FormInput } from "../index";
-const SignUp = () => {
-  const [Email, setEmail] = useState("");
-  const [Password, setPassword] = useState("");
-  const [Name, setName] = useState("");
-  const [Confirmpassword, setConfirmPassword] = useState("");
+import { createProfileAccount } from "../../redux/index";
+import { useFormik } from "formik";
+import { connect } from "react-redux";
+import * as Yup from "yup";
 
+const SignUp = ({ createProfileAccount }) => {
+  const initialValues = {
+    name: "",
+    password: "",
+    email: "",
+    ConfirmPassword: "",
+  };
+  const submit = (values) => {
+    const { email, password, name } = values;
+    createProfileAccount({ email, password, name });
+  };
+  const validationSchema = Yup.object({
+    name: Yup.string().required("name is required "),
+    email: Yup.string()
+      .required("email is required")
+      .email("invlaid Format email"),
+
+    password: Yup.string()
+      .required("No password provided.")
+      .min(8, "Password is too short - should be 8 chars minimum."),
+    ConfirmPassword: Yup.string()
+      .required("password is required ")
+      .oneOf([Yup.ref("password"), null], "passWord should match 202020"),
+  });
+  const errors = {
+    name: "",
+    password: "",
+    email: "",
+    ConfirmPassword: "",
+  };
+  const formik = useFormik({
+    initialValues,
+    onSubmit: submit,
+    validationSchema,
+    errors,
+  });
   return (
-    <SignInContainer>
-      <SignInWrapper>
+    <SignInContainer onSubmit={formik.handleSubmit}>
+      <FormWrapper>
         <h1> Sign Up </h1>
 
         <FormInput
-          name="Name"
+          name="name"
           type="text"
           label="Name"
-          value={Name}
-          onChange={(e) => setName(e.target.value)}
-          required
+          value={formik.values.name}
+          error={
+            formik.touched.name && formik.errors.name
+              ? formik.errors.name
+              : null
+          }
+          {...formik.getFieldProps("name")}
         />
+
         <FormInput
           name="email"
           type="email"
           label="Email"
-          value={Email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
+          value={formik.values.email}
+          error={
+            formik.touched.email && formik.errors.email
+              ? formik.errors.email
+              : null
+          }
+          {...formik.getFieldProps("email")}
         />
+
         <FormInput
           name="password"
           type="password"
           label="password"
-          value={Password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
+          value={formik.values.password}
+          error={
+            formik.touched.password && formik.errors.password
+              ? formik.errors.password
+              : null
+          }
+          {...formik.getFieldProps("password")}
         />
+
         <FormInput
           name="Confirmpassword"
           type="password"
           label="Confirm password"
-          value={Confirmpassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
+          value={formik.values.ConfirmPassword}
+          error={
+            formik.touched.ConfirmPassword && formik.errors.ConfirmPassword
+              ? formik.errors.ConfirmPassword
+              : null
+          }
+          {...formik.getFieldProps("ConfirmPassword")}
         />
-        <button className="submit-button">Sign Up</button>
+
+        <button type="submit" className="submit-button">
+          Sign Up
+        </button>
         <span>
           I have Account ?{" "}
           <a href="/signin" className="signup-link">
             Sign In{" "}
           </a>
         </span>
-      </SignInWrapper>
+      </FormWrapper>
     </SignInContainer>
   );
 };
 
-export default SignUp;
+const mapDispatchToProps = {
+  createProfileAccount: (userInfo) => createProfileAccount(userInfo),
+};
+export default connect(null, mapDispatchToProps)(SignUp);
