@@ -1,9 +1,8 @@
 import React from "react";
 import * as All from "./components/index";
 import { GLobelStyle } from "./globelStyle.style";
-import { Provider } from "react-redux";
-import { Store } from "./redux/index";
-import { Route, Switch } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
+import { connect } from "react-redux";
 import {
   HomePage,
   Product,
@@ -11,31 +10,30 @@ import {
   CartPage,
   ErrorPage,
 } from "./pages/index";
-import { SignIn, SignUp } from "./components/index";
-const App = (props) => {
+import { SignIn, SignUp, Header, Footer } from "./components/index";
+const App = ({ loading }) => {
   return (
     <>
-      <Provider store={Store}>
-        <GLobelStyle />
-        <All.Header />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
+      <GLobelStyle />
+      <Header />
+      {loading ? <All.Loading /> : null}
+      <Switch>
+        <Route exact path="/" component={HomePage} />
 
-          <Route exact path="/product/:productName" component={Product} />
+        <Route exact path="/product/:productName" component={Product} />
 
-          <Route
-            path="/collection/:CollectionName"
-            component={CollectionPage}
-          />
-          <Route path="/Cart" component={CartPage} />
-          <Route path="/signin" component={SignIn} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="*" component={ErrorPage} />
-        </Switch>
-        <All.Footer />
-      </Provider>
+        <Route path="/collection/:CollectionName" component={CollectionPage} />
+        <Route path="/Cart" component={CartPage} />
+        <Route path="/signin" component={SignIn} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="*" component={ErrorPage} />
+      </Switch>
+      <Footer />
     </>
   );
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+  loading: state.User.loading,
+});
+export default connect(mapStateToProps)(App);

@@ -1,12 +1,22 @@
 import React from "react";
 import { SignInContainer, FormWrapper } from "./signup.style";
 import { FormInput } from "../index";
-import { createProfileAccount } from "../../redux/index";
+import {
+  createProfileAccount,
+  createProfileAccountStart,
+  selectCurrentUser,
+} from "../../redux/index";
 import { useFormik } from "formik";
 import { connect } from "react-redux";
 import * as Yup from "yup";
+import { createStructuredSelector } from "reselect";
+import { Redirect } from "react-router-dom";
 
-const SignUp = ({ createProfileAccount }) => {
+const SignUp = ({
+  createProfileAccount,
+  currentUser,
+  createProfileAccountStart,
+}) => {
   const initialValues = {
     name: "",
     password: "",
@@ -16,6 +26,7 @@ const SignUp = ({ createProfileAccount }) => {
   const submit = (values) => {
     const { email, password, name } = values;
     createProfileAccount({ email, password, name });
+    createProfileAccountStart();
   };
   const validationSchema = Yup.object({
     name: Yup.string().required("name is required "),
@@ -44,6 +55,7 @@ const SignUp = ({ createProfileAccount }) => {
   });
   return (
     <SignInContainer onSubmit={formik.handleSubmit}>
+      {currentUser ? <Redirect to="/" /> : null}
       <FormWrapper>
         <h1> Sign Up </h1>
 
@@ -115,5 +127,9 @@ const SignUp = ({ createProfileAccount }) => {
 
 const mapDispatchToProps = {
   createProfileAccount: (userInfo) => createProfileAccount(userInfo),
+  createProfileAccountStart,
 };
-export default connect(null, mapDispatchToProps)(SignUp);
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+});
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

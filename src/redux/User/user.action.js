@@ -19,3 +19,6 @@ export const createProfileAccount = (userData) => ({
   type: UserActionTypes.CREATE_PROFILE_ACCOUNT,
   payload: userData,
 });
+export const createProfileAccountStart = () => ({
+  type: UserActionTypes.CREATE_PROFILE_ACCOUNT_START,
+});

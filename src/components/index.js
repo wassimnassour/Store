@@ -12,6 +12,7 @@ import BackDrop from "./BackDrop/backdrop.components";
 import Cart from "./Cart/cart.components";
 import SignIn from "./SignIn/signin.component";
 import SignUp from "./SignUp/signup.component";
+import Loading from "./Loading/loading.component";
 export {
   Header,
   CollectionOverview,
@@ -27,4 +28,5 @@ export {
   SignIn,
   FormInput,
   SignUp,
+  Loading,
 };

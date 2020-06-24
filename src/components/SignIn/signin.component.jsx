@@ -3,10 +3,23 @@ import { SignInContainer, SignInWrapper } from "./signin.style";
 import { FormInput } from "../index";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { SignInWithEmailStart, SignInWithGoogleStart } from "../../redux/index";
+import {
+  SignInWithEmailStart,
+  SignInWithGoogleStart,
+  selectCurrentUser,
+} from "../../redux/index";
 import { connect } from "react-redux";
 import { auth } from "../../Firebase/firebase";
-const SignIn = ({ SignInWithEmailStart, SignInWithGoogleStart, dispatch }) => {
+import { Redirect } from "react-router-dom";
+import { createStructuredSelector } from "reselect";
+
+const SignIn = ({
+  SignInWithEmailStart,
+  currentUser,
+  SignInWithGoogleStart,
+  dispatch,
+}) => {
+  console.log(currentUser);
   const initialValues = {
     password: "",
     email: "",
@@ -35,12 +48,11 @@ const SignIn = ({ SignInWithEmailStart, SignInWithGoogleStart, dispatch }) => {
     validationSchema,
     errors,
   });
-
   return (
     <SignInContainer onSubmit={formik.handleSubmit}>
       <SignInWrapper>
         <h1> WelCome Back </h1>
-
+        {currentUser ? <Redirect to="/" /> : null}
         <FormInput
           name="email"
           type="email"
@@ -84,6 +96,8 @@ const SignIn = ({ SignInWithEmailStart, SignInWithGoogleStart, dispatch }) => {
           </a>
         </span>
       </SignInWrapper>
+
+      <button onClick={() => auth.signOut()}>Sign Out</button>
     </SignInContainer>
   );
 };
@@ -91,4 +105,7 @@ const mapDispatchToProps = {
   SignInWithEmailStart: (user) => SignInWithEmailStart(user),
   SignInWithGoogleStart,
 };
-export default connect(null, mapDispatchToProps)(SignIn);
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+});
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

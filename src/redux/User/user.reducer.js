@@ -9,6 +9,7 @@ export const userReducer = (state = INTAIL_DATA, action) => {
   switch (action.type) {
     case UserActionTypes.SIGN_WITH_EMAIL_START:
     case UserActionTypes.SIGN_WITH_GOOGLE_START:
+    case UserActionTypes.CREATE_PROFILE_ACCOUNT_START:
       return {
         ...state,
         loading: true,

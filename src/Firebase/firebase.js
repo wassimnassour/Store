@@ -25,15 +25,16 @@ GoogleProvider.setCustomParameters({
 export const SignInWithGoogle = () => auth.signInWithPopup(GoogleProvider);
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-  const { name } = additionalData;
   if (!userAuth) return;
   const userRef = firestore.doc(`users/${userAuth.uid}`);
 
   const snapShot = await userRef.get();
 
   if (!snapShot.exists) {
+    const { name } = additionalData;
+    console.log(additionalData);
     const { displayName, email } = userAuth;
-
+    console.log(displayName);
     const checkIfDispalyNameExist = displayName ? displayName : name;
 
     console.log(checkIfDispalyNameExist);

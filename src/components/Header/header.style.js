@@ -96,7 +96,16 @@ align-content: baseline;
  & > li {
 
  	list-style:none;
+ 	.icon-arrow-right{
+ 	transform: rotate(90deg);
+
+display: block;
+
+height: 15px;
+
+margin: .81rem;}
  	 & > a {
+ 	
 
 color:black; 	 }
  }}}
@@ -112,4 +121,10 @@ color:black; 	 }
 	
 }
 
+`;
+
+export const UserDetails = styled.div`
+	display: flex;
+	justify-content: content;
+	align-items: center;
 `;
