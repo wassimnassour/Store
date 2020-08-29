@@ -4,5 +4,5 @@ in this project I will use Redux React Hooks and react-router  to make an e-comm
 
 and reason for making it is trying to improve my skills 
 
-and I will be happy if Samoan add a feature
+and I will be happy if Semeone add a feature
 
