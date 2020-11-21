@@ -1,5 +1,5 @@
 import Header from "./Header/header.components";
-import SectionZero from "./sectionZero/sectionZero.components";
+import Hero from "./hero/hero";
 import Button from "./Button/button.components";
 import CollectionOverview from "./collectionOverview/collectionOverview.components";
 import CollectionPreview from "./collectionPreview/collectionPreview.components";
@@ -12,10 +12,11 @@ import BackDrop from "./BackDrop/backdrop.components";
 import Cart from "./Cart/cart.components";
 import SignIn from "./SignIn/signin.component";
 import SignUp from "./SignUp/signup.component";
+import SideBar from "./sideBar/sideBar.components"
 export {
   Header,
   CollectionOverview,
-  SectionZero,
+  Hero,
   Button,
   CollectionItem,
   CollectionPreview,
@@ -27,4 +28,5 @@ export {
   SignIn,
   FormInput,
   SignUp,
+  SideBar
 };

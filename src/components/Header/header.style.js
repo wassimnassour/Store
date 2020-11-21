@@ -3,27 +3,23 @@ import { Link } from "react-router-dom";
 
 export const A = styled(Link)`
 	font-size: 0.9rem;
-
 	line-height: 20px;
-
 	margin-right: 2rem;
-
 	list-style: none;
-
 	text-decoration: none;
 	font-family: "Noto Serif", serif;
-	color: white;
+	color: dark;
 	cursor: pointer;
 `;
-export const Logo = styled.h1`
+export const Logo = styled.div`
 	font-size: 35px;
 	line-height: 70px;
-	color: black;
 	font-family: "Noto Serif", serif;
-	color: black;
-	margin: 0 5rem;
+	margin: 0 1rem;
 	${A} {
-		font-size: 30px;
+		font-size: 25px;
+		color: black;
+		font-weight: bold;
 	}
 `;
 
@@ -42,74 +38,63 @@ export const HeaderButton = styled.button`
 	font-family: "Noto Serif", serif;
 	font-weight: 400;
 	color: black;
-position: relative;
-	& > span {
+	position: relative;
+	span {
 		margin-right: 0.3rem;
 	}
-	& .cart{
+	.cart {
 		position: absolute;
-
-top: 0px;
-left: 18px;
-
-
-background:
-red;
-
-border-radius: 100%;
-
-width: 22px;
-
-height: 22px;
-
-text-align: center;
-
-color:
-
-    white;
-
-}
+		top: 0px;
+		left: 18px;
+		border-radius: 100%;
+		width: 22px;
+		height: 22px;
+		text-align: center;
+		color: white;
 	}
 `;
 export const HeaderContainer = styled.header`
-	box-shadow:${(props) => (props.boxShadow ? "" : "0px 0px 2px 1.1px #959595")};
-height: 5vh;
-left: 120px;
-top: 40px;
-
-top: 0;
-left: 0;
-right: 0;
-z-index: 60;
-display: flex;
-justify-content: space-around;
-align-items: center;
-background:
-    transparent;
-
-& > ul {
+	box-shadow: 0 0 1px 2px #80808033;
+	height: 10vh;
+	z-index: 60;
 	display: flex;
-justify-content: center;
-align-items: center;
-align-content: baseline;
+	justify-content: space-around;
+	align-items: center;
+	background: white;
+	width: 100%;
+	.header__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 90%;
+	}
 
- & > li {
+	ul {
+		@media (max-width: 900px) {
+			display: none;
+		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-content: baseline;
 
- 	list-style:none;
- 	 & > a {
+		li {
+			list-style: none;
+			a {
+				color: black;
+			}
+		}
 
-color:black; 	 }
- }}}
- ${HeaderButton} {
- 	 	color:black;
+		${HeaderButton} {
+			color: black;
+			outline: none;
+		}
 
- }
-
- ${Logo} {
- color:black; 	
-	${A} {
-		color:black; 	
-	
-}
-
+		${Logo} {
+			color: black;
+			${A} {
+				color: black;
+			}
+		}
+	}
 `;

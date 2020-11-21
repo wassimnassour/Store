@@ -6,7 +6,7 @@ import * as All from "../../components/index";
 const HomePage = (props) => {
 	return (
 		<HomePageContainer>
-			<All.SectionZero />
+			<All.Hero />
 			<All.CollectionOverview />
 			<All.News />
 		</HomePageContainer>
