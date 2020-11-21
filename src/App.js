@@ -18,20 +18,22 @@ const App = (props) => {
       <Provider store={Store}>
         <GLobelStyle />
         <All.Header />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
+        <main>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
 
-          <Route exact path="/product/:productName" component={Product} />
+            <Route exact path="/product/:productName" component={Product} />
 
-          <Route
-            path="/collection/:CollectionName"
-            component={CollectionPage}
-          />
-          <Route path="/Cart" component={CartPage} />
-          <Route path="/signin" component={SignIn} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="*" component={ErrorPage} />
-        </Switch>
+            <Route
+              path="/collection/:CollectionName"
+              component={CollectionPage}
+            />
+            <Route path="/Cart" component={CartPage} />
+            <Route path="/signin" component={SignIn} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="*" component={ErrorPage} />
+          </Switch>
+        </main>
         <All.Footer />
       </Provider>
     </>

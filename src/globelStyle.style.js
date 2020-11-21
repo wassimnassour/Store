@@ -8,4 +8,7 @@ body {
 	overflow-x:hidden;
 	box-sizing: border-box;
 }
+main{
+	min-height:83vh;
+}
 `;

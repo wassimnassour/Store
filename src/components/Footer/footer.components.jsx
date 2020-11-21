@@ -1,44 +1,26 @@
 import React from "react";
-import { FooterContainer, FooterInfo, FooterWrapper } from "./footer.style";
-const Footer = (props) => {
+import { FooterContainer, SocialMediaWrapper, Rights } from "./footer.style";
+
+const Footer = () => {
 	return (
 		<FooterContainer>
-			<FooterWrapper>
-				<FooterInfo>
-					<h1>CUSTOMER SERVICE</h1>
-					<ul>
-						<li>CONTACT</li>
-						<li>TRACK ORDER </li>
-						<li> DELIVERY</li>
-						<li></li>
-					</ul>
-				</FooterInfo>
-				<FooterInfo>
-					<h1>INFO</h1>
-					<ul>
-						<li>GIFT VOUCHERS</li>
-						<li>SIZE QUIDE </li>
-						<li> CAREERS AT MODNIKKY</li>
-						<li>ABOUT US </li>
-					</ul>
-				</FooterInfo>
-				<FooterInfo>
-					<h1>FOLLOW US </h1>
-					<ul>
-						<li>FACEBOOK</li>
-						<li>INSTAGRMAE </li>
-						<li> TWITTER</li>
-					</ul>
-				</FooterInfo>
-				<FooterInfo>
-					<h1>Contact Us </h1>
-					<ul>
-						<li>nassourwassim@gmail.com</li>
-						<li>+212641327128</li>
-						<li> Casablanca</li>
-					</ul>
-				</FooterInfo>
-			</FooterWrapper>
+			<SocialMediaWrapper>
+				<li>
+					<a href="/">Facebook</a>
+				</li>
+				<li>
+					<a href="/">Instagrame</a>
+				</li>
+				<li>
+					<a href="/">Github</a>
+				</li>
+				<li>
+					<a href="/">linkedIn</a>
+				</li>
+			</SocialMediaWrapper>
+			<Rights>
+				© Copyright {new Date().getFullYear()}. All rights reserved
+			</Rights>
 		</FooterContainer>
 	);
 };

@@ -4,10 +4,10 @@ export const SideBarContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
 	z-index: 60;
+	height: 100%;
 	ul {
-		height: 100%;
+		height: 75%;
 		text-align: center;
 		display: flex;
 		flex-direction: column;
@@ -15,16 +15,16 @@ export const SideBarContainer = styled.div`
 		padding-left: 0;
 
 		li {
-			padding: 1rem;
-			font-size: 1.5rem;
+			padding: 10px;
+			font-size: 15px;
 			a {
 				color: white;
-				font-size: 1.4rem;
+				font-size: 20px;
 				transition: 0.3s all;
 			}
 		}
 		button {
-			margin: 2rem;
+			margin: 20px;
 			outline: none;
 		}
 	}
@@ -37,13 +37,21 @@ export const SideBarContainer = styled.div`
 		bottom: 0;
 		width: 62%;
 	}
-
+	.buttons {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 90%;
+		margin: 0 auto;
+		height: 84px;
+		margin-top: 28px;
+	}
 	// laptop
-	@media (min-width: 850px) {
+	@media (min-width: 900px) {
 		display: none;
 	}
 	// tablet
-	@media (max-width: 800px) {
+	@media (max-width: 900px) {
 		.sideBar__Wrapper {
 			width: 66%;
 		}
@@ -57,26 +65,19 @@ export const SideBarContainer = styled.div`
 `;
 
 export const Button = styled.button`
-	z-index: 66;
-	margin-right: 2rem;
-	border: none;
-	background: none;
-	font-size: 4.2rem;
-	outline: none;
-	position: absolute;
-	.svg {
-		font-size: 2.8rem;
-	}
-	${({ open }) =>
-		open && {
-			transition: " .3s all",
-			transform: "rotateZ(360deg)",
-			right: "33%",
-			top: "2rem",
-			color: "white",
-		}};
+color: black;
+background: none;
+border: none;
+font-size: 30px;
+		${({ open }) =>
+			open && {
+				transition: " .3s all",
+				transform: "rotateZ(360deg)",
+				color: "white",
+				padding: "29px",
+			}};*/
 	// Tablet
-	@media (max-width: 800px) {
+/*	@media (max-width: 800px) {
 		margin-right: 1rem;
 		${({ open }) =>
 			open && {
@@ -84,6 +85,6 @@ export const Button = styled.button`
 				top: "2%",
 				position: "fixed",
 			}};
-	}
-=
+	}*/
+
 `;

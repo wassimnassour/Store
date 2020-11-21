@@ -6,8 +6,10 @@ import {
 	faUserCircle,
 	faShoppingBag,
 } from "@fortawesome/free-solid-svg-icons";
-import { Search, Cart, SideBar } from "../index";
 import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+
 import {
 	AddSearchField,
 	CloseModal,
@@ -15,9 +17,7 @@ import {
 	SelectModal,
 	Selecquantitiy,
 } from "../../redux/index";
-
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import { Search, Cart, SideBar } from "../index";
 
 const Header = ({
 	location,

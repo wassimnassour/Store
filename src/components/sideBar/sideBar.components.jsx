@@ -1,22 +1,39 @@
 import React from "react";
-import { SideBarContainer, Button } from "./sideBar.style";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { Link } from "react-router-dom";
-const SideBar = ({ open, togglebutton }) => {
+import { Link, withRouter } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import { SideBarContainer, Button } from "./sideBar.style";
+
+const SideBar = ({ open, togglebutton, history }) => {
+	console.log(history, "history");
 	return (
 		<SideBarContainer onClick={togglebutton} open={open}>
-			<Button onClick={togglebutton} open={open}>
-				{!open ? (
+			{!open && (
+				<Button>
 					<AiOutlineMenu className="svg" />
-				) : (
-					<AiOutlineClose className="svg" />
-				)}
-			</Button>{" "}
+				</Button>
+			)}
+
 			{open && (
 				<div className="sideBar__Wrapper">
+					<div className="buttons">
+						<Button
+							open={open}
+							onClick={() => history.push("/cart")}
+						>
+							<FontAwesomeIcon icon={faShoppingBag} />
+						</Button>
+						<Button onClick={togglebutton} open={open}>
+							<AiOutlineClose className="svg" />
+						</Button>
+					</div>
 					<ul>
 						<li>
-							<Link to="/collection/hats">hats</Link>
+							<Link to="/">Home</Link>
+						</li>
+						<li>
+							<Link to="/collection/hats">Hats</Link>
 						</li>
 						<li>
 							<Link to="/collection/sneakers">Sneakers</Link>
@@ -37,4 +54,4 @@ const SideBar = ({ open, togglebutton }) => {
 	);
 };
 
-export default SideBar;
+export default withRouter(SideBar);
