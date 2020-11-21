@@ -1,17 +1,15 @@
 import styled from "styled-components";
 
 export const CollectionContainer = styled.div`
-	& .collectionPreview {
+	.collectionPreview {
 		display: flex;
-
 		flex-wrap: wrap;
-
 		margin: 1rem auto 11rem auto;
-		width: 80%;
+		width: 86%;
 		justify-content: center;
 		align-items: center;
 
-		& .img {
+		.img {
 			margin: 0.6rem;
 			flex: 1 1 250px;
 			display: flex;
@@ -19,73 +17,52 @@ export const CollectionContainer = styled.div`
 			flex-direction: column;
 			flex-grow: 0;
 			position: relative;
+		}
 
- & img {
- 	width: 250px;
-height: 300px;
- }
-			& .buttons {
-				opacity: 0;
+		img {
+			width: 250px;
+			height: 300px;
+		}
+		.buttons {
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+			position: absolute;
 
-width: 100%;
-height: 100%;
-position: absolute;
-			}
-			&:hover .buttons {
+			&:hover {
 				display: flex;
 				justify-content: center;
-				
 				align-items: center;
 				background: #2f2f2fde;
 				flex-direction: column;
 				position: absolute;
 				opacity: 1;
-				transition: .16s ease-in;
+				transition: 0.16s ease-in;
 			}
-			&:hover .buttons a {
+			&:hover a {
 				width: 67%;
-
 			}
-			.buttons a button {
+			& a button {
 				background: black;
 				border: 1px solid white;
 				padding: 1rem;
 				width: 101%;
 				margin: 0 auto;
-				color:white;
-
+				color: white;
 			}
-
-
-		&
 		}
 	}
 
-	& .collectionNav {
-		/*	width: 20%;
-		box-shadow: 0px 0px 1px 0.3px gray;
-
-		height: 685px;*/
-		& ul {
-			padding-left: 0;
-			display: flex;
-
-			justify-content: center;
-			li {
-				margin: 0.96rem;
-				border-bottom: 1px solid;
-				text-align: center;
-				list-style: none;
-
-				a {
-					text-decoration: none;
-					color: black;
-				}
-			}
-		}
-
-		& h4 {
+	.collectionNav {
+		display: flex;
+		justify-content: center;
+		margin-top: 40px;
+		h2 {
 			text-align: center;
+			border: 2px solid black;
+			border-radius: 4px;
+			display: inline;
+			padding: 10px;
 		}
 	}
 `;
