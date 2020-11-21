@@ -16,10 +16,16 @@ export const Logo = styled.div`
 	line-height: 70px;
 	font-family: "Noto Serif", serif;
 	margin: 0 1rem;
+	height: 100%;
+
 	${A} {
 		font-size: 25px;
 		color: black;
 		font-weight: bold;
+	}
+	// Mobile
+	@media (max-width: 600px) {
+		margin: 0;
 	}
 `;
 
@@ -55,7 +61,7 @@ export const HeaderButton = styled.button`
 `;
 export const HeaderContainer = styled.header`
 	box-shadow: 0 0 1px 2px #80808033;
-	height: 10vh;
+	height: 9vh;
 	z-index: 60;
 	display: flex;
 	justify-content: space-around;
@@ -67,6 +73,7 @@ export const HeaderContainer = styled.header`
 		justify-content: space-between;
 		align-items: center;
 		width: 90%;
+		height: 100%;
 	}
 
 	ul {

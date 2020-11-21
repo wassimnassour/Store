@@ -6,16 +6,16 @@ const Footer = () => {
 		<FooterContainer>
 			<SocialMediaWrapper>
 				<li>
-					<a href="">Facebook</a>
+					<a href="/">Facebook</a>
 				</li>
 				<li>
-					<a href="">Instagrame</a>
+					<a href="/">Instagrame</a>
 				</li>
 				<li>
-					<a href="">Github</a>
+					<a href="/">Github</a>
 				</li>
 				<li>
-					<a href="">linkedIn</a>
+					<a href="/">linkedIn</a>
 				</li>
 			</SocialMediaWrapper>
 			<Rights>
