@@ -19,74 +19,69 @@ export const CheckoutContainer = styled.div`
 	}
 	.subcontainer2 {
 		display: flex;
-	
 		align-items: center;
-
 		margin: 1rem auto;
-
 		flex-direction: column;
-	
+
+		padding-bottom: 15px;
+		border-bottom: 1px solid grey;
 		span {
 			width: 25%;
 			text-align: center;
 		}
 		img {
 			width: 25%;
-			height: 150px;
+			height: 170px;
 		}
 		.itemWrapper {
 			width: 100%;
 			margin: 0.5rem;
 			display: flex;
-
 			align-items: center;
 			.item {
 				width: 100%;
-
 				display: flex;
-
 				align-items: center;
 				.Arrow {
-					padding: .1rem;
-border: 1px solid;
-margin: .3rem;
-
+					padding: 0.1rem;
+					border: 1px solid;
+					margin: 0.3rem;
 				}
 			}
 		}
 	}
 	.checkout {
-	
-width: 150px;
-
+		width: 150px;
 		margin: auto;
-
-		margin-left: auto;
-
 		margin-left: 80%;
 		p {
-			text-align:center;
+			text-align: center;
 		}
-	 button{
+		button {
+			background: #000000e6;
 
-	 	background:
-#000000e6;
+			border: 1px solid;
 
-border: 1px solid;
+			padding: 0.6rem;
 
-padding: .6rem;
+			width: 150px;
 
-width: 150px;
+			font-size: 1rem;
 
-font-size: 1rem;
+			font-weight: bold;
 
-font-weight: bold;
-
-color:
-
-    white;
-
-}
-	 }
+			color: white;
+		}
+	}
+	@media (max-width: 600px) {
+		width: 95%;
+		.checkout {
+			margin-left: 50%;
+		}
+		.subcontainer2 {
+			img {
+				height: 90px;
+			}
+		}
 	}
 `;
