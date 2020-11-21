@@ -16,30 +16,21 @@ const CollectionPage = ({ collections, match }) => {
 		<CollectionContainer>
 			{collection ? (
 				<div className="collectionNav">
-					<h4>collection</h4>
-					<ul>
-						{collections.map((CollectionName) => (
-							<li key={CollectionName.id}>
-								<Link
-									to={`/collection/${CollectionName.title}`}
-								>
-									{CollectionName.title}
-								</Link>
-							</li>
-						))}
-					</ul>
+					<h2>{match.params.CollectionName} Collection </h2>
 				</div>
 			) : null}
 			{collection ? (
 				<div className="collectionPreview">
 					{collection.items.map((item) => (
 						<div className="img" key={item.id}>
-							<img src={item.imageUrl} alt={item.name} />
-							<div className="buttons">
-								<Link to={`/product/${item.id}`}>
-									<button>Shop Now </button>
-								</Link>
-							</div>
+							<Link to={`/product/${item.id}`}>
+								<img src={item.imageUrl} alt={item.name} />
+								<div className="buttons">
+									<Link to={`/product/${item.id}`}>
+										<button>Shop Now </button>
+									</Link>
+								</div>
+							</Link>
 						</div>
 					))}
 				</div>
