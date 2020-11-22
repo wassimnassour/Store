@@ -3,11 +3,13 @@ import styled from "styled-components";
 export const ItemContainer = styled.div`
 	height: 100%;
 	width: 100%;
-	& button {
+	position: relative;
+
+	button {
 		display: none;
 	}
 
-	& img {
+	img {
 		height: 100%;
 		width: 100%;
 	}
@@ -31,9 +33,8 @@ export const ItemContainer = styled.div`
 	}
 
 	@media (max-width: 600px) {
-		& > img {
+		img {
 			flex: 1;
-			background: red;
 		}
 	}
 `;
