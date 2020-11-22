@@ -2,34 +2,24 @@ import styled from "styled-components";
 
 export const SearchFieldContainer = styled.div`
 	display: ${(props) => (props.openModel ? "" : "none")};
-
 	width: 100%;
-
 	height: auto;
-
 	z-index: 5;
-
 	position: absolute;
-
 	left: 0;
-
 	top: 0;
+	z-index: 100;
 `;
 export const SearchField = styled.input`
 	margin: 15px 0;
-	margin: 15px 0;
-
-	width: 35%;
-
+	width: 50%;
 	height: 60px;
-
 	color: black;
-
 	font-size: 1rem;
-
 	font-weight: bold;
-
 	text-align: center;
+	justify-content: center;
+	margin-right: 20px;
 `;
 
 export const SearchInputContainer = styled.div`
@@ -42,12 +32,25 @@ export const SearchInputContainer = styled.div`
 	z-index: 100;
 	flex-direction: column;
 	align-items: center;
-	& > button {
-		position: absolute;
-		right: 28px;
-		top: 15px;
-
+	height: 100vh;
+	position: fixed;
+`;
+export const SearchInput = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70%;
+	margin: 0 auto;
+	button {
 		border: none;
+		background: none;
+		font-size: 30px;
+		height: 100%;
+		padding-left: 60px;
+	}
+	@media (max-width: 600px) {
+		position: absolute;
+		top: 0;
 	}
 `;
 
@@ -61,17 +64,17 @@ export const BackDropContainer = styled.div`
 	background-color: rgba(0, 0, 0, 0.5);
 `;
 
-export const ItemContainer = styled.div`
+export const ItemsContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-content: center;
 	width: 80%;
-	flex-direction: row;d
+	flex-direction: row;
 	text-align: center;
 	flex-wrap: wrap;
 	margin: auto;
 
-	& .item {
+	.item {
 		margin: 25px 0;
 		margin: auto;
 		height: 225px;
@@ -89,28 +92,32 @@ export const ItemContainer = styled.div`
 			display: flex;
 			justify-content: center;
 			align-items: center;
-            background: #242424e6;
+			background: #242424e6;
 			& a {
 				text-decoration: none;
-					color: white;
+				color: white;
 				border: 1px solid #ececec;
-padding: 0.4rem;
+				padding: 0.4rem;
 			}
 		}
 	}
-	& .item-image-link {
+	.item-image-link {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 
-		& img {
+		img {
 			height: 120px;
 		}
-		& .link {
+		.link {
 			height: 100%;
 			width: 100%;
 			opacity: 0;
 		}
+	}
+	@media (max-width: 600px) {
+		position: absolute;
+		top: 20%;
 	}
 `;
