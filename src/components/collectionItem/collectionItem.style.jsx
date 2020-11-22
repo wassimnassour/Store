@@ -3,18 +3,22 @@ import styled from "styled-components";
 export const ItemContainer = styled.div`
 	height: 100%;
 	width: 100%;
-	& button {
+	position: relative;
+
+	button {
 		display: none;
 	}
 
-	& img {
+	img {
 		height: 100%;
 		width: 100%;
 	}
 	&:hover button {
 		display: block;
 		position: absolute;
-		background: #242424e6;
+		background: red;
+		/*		background: #242424e6;
+*/
 		width: 100%;
 		height: 100%;
 		left: 0;
@@ -31,9 +35,8 @@ export const ItemContainer = styled.div`
 	}
 
 	@media (max-width: 600px) {
-		& > img {
+		img {
 			flex: 1;
-			background: red;
 		}
 	}
 `;

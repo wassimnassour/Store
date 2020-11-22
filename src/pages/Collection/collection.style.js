@@ -5,13 +5,12 @@ export const CollectionContainer = styled.div`
 		display: flex;
 		flex-wrap: wrap;
 		margin: 1rem auto 11rem auto;
-		width: 86%;
 		justify-content: center;
 		align-items: center;
 
 		.img {
 			margin: 0.6rem;
-			flex: 1 1 250px;
+			flex: 1 1 31%;
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
@@ -20,7 +19,7 @@ export const CollectionContainer = styled.div`
 		}
 
 		img {
-			width: 250px;
+			width: 100%;
 			height: 300px;
 		}
 		.buttons {
@@ -28,7 +27,8 @@ export const CollectionContainer = styled.div`
 			width: 100%;
 			height: 100%;
 			position: absolute;
-
+			top: 0;
+			cursor: pointer;
 			&:hover {
 				display: flex;
 				justify-content: center;
@@ -63,6 +63,38 @@ export const CollectionContainer = styled.div`
 			border-radius: 4px;
 			display: inline;
 			padding: 10px;
+		}
+	}
+	@media (min-width: 1300px) {
+		.img {
+			flex: 1 1 31%;
+		}
+		.collectionPreview {
+			width: 73%;
+			justify-content: flex-start;
+		}
+	}
+
+	@media (max-width: 1200px) {
+		.collectionPreview {
+			.img {
+				flex-basis: 29%;
+			}
+		}
+	}
+
+	@media (max-width: 900px) {
+		.collectionPreview {
+			.img {
+				flex-basis: 40%;
+			}
+		}
+	}
+	@media (max-width: 550px) {
+		.collectionPreview {
+			.img {
+				flex-basis: 75%;
+			}
 		}
 	}
 `;

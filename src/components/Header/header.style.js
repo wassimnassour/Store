@@ -17,7 +17,9 @@ export const Logo = styled.div`
 	font-family: "Noto Serif", serif;
 	margin: 0 1rem;
 	height: 100%;
-
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	${A} {
 		font-size: 25px;
 		color: black;
@@ -61,7 +63,7 @@ export const HeaderButton = styled.button`
 `;
 export const HeaderContainer = styled.header`
 	box-shadow: 0 0 1px 2px #80808033;
-	height: 9vh;
+	height: 10vh;
 	z-index: 60;
 	display: flex;
 	justify-content: space-around;

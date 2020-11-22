@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PreviewContainer = styled.div`
 	width: 18%;
 	margin: 8px;
-	height: auto;
+	max-height: 300px;
 	position: relative;
 	@media (max-width: 900px) {
 		width: 35%;
