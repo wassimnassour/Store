@@ -25,12 +25,12 @@ const CollectionPage = ({ collections, match }) => {
 						<div className="img" key={item.id}>
 							<Link to={`/product/${item.id}`}>
 								<img src={item.imageUrl} alt={item.name} />
-								<div className="buttons">
-									<Link to={`/product/${item.id}`}>
-										<button>Shop Now </button>
-									</Link>
-								</div>
 							</Link>
+							<div className="buttons">
+								<Link to={`/product/${item.id}`}>
+									<button>Shop Now </button>
+								</Link>
+							</div>
 						</div>
 					))}
 				</div>

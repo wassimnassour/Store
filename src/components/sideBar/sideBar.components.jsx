@@ -6,7 +6,6 @@ import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { SideBarContainer, Button } from "./sideBar.style";
 
 const SideBar = ({ open, togglebutton, history }) => {
-	console.log(history, "history");
 	return (
 		<SideBarContainer onClick={togglebutton} open={open}>
 			{!open && (
