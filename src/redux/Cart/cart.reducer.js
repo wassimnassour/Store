@@ -2,7 +2,7 @@ import { CartActionTypes } from "./cart.types";
 import { addItemToCart, RemoveItemFromCart } from "./cart.utilt";
 const INTIAL_STATE = {
 	hidden: false,
-	cartItems: [],
+	cartItems: JSON.parse(window.localStorage.getItem("cartItems")) || [],
 };
 export const cartReducer = (state = INTIAL_STATE, action) => {
 	switch (action.type) {
