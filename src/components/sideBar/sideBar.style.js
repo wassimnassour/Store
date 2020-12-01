@@ -69,6 +69,7 @@ color: black;
 background: none;
 border: none;
 font-size: 30px;
+outline:none;
 		${({ open }) =>
 			open && {
 				transition: " .3s all",

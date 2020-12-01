@@ -91,6 +91,7 @@ export const HeaderContainer = styled.header`
 			list-style: none;
 			a {
 				color: black;
+				font-size: 17px;
 			}
 		}
 
