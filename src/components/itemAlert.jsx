@@ -9,10 +9,12 @@ const ItemAlert = ({ added, RemoveALert }) => {
   if (!added) {
     return null;
   }
-  setTimeout(()=>{RemoveALert()} , 2600)
+  // send action to remove  alert after 1s 
+  setTimeout(()=>{RemoveALert()} , 1400)
   return (
     <ItemAlertContainer>
-      A new item has been added to your Shopping Cart
+   A new item has been added to your Shopping Cart.
+
       <button onClick={RemoveALert}>
         <FontAwesomeIcon icon={faTimes} />
       </button>
@@ -27,26 +29,30 @@ const mapstateToProps = createStructuredSelector({
 });
 
 const ItemAlertContainer = styled.div`
-  position: absolute;
-  background: #32cd32;
-  max-width: 600px;
-  padding: 10px;
-  height: 57px;
-  top: 88%;
-  right: 3%;
+    position: static;  background: #53fa53;
+  width: 100%;
+  padding: 6px;
+  height: auto;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  border-radius: 8px;
+ 
+  
   button {
     margin-left: 10px;
     background: none;
     border: none;
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     border: 1px solid;
     padding: 5px;
+  }
+  @media (max-width:800px){
+    font-size:14px;
+    height: 37px;
+
   }
 `;
 export default connect(mapstateToProps, mapDispatchToProps)(ItemAlert);

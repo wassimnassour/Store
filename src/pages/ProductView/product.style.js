@@ -5,7 +5,7 @@ export const ItemContainer = styled.div`
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	width: 80%;
+	width: 65%;
 	height: 620px;
 	margin: 76px auto;
 	@media (max-width: 900px) {
@@ -24,13 +24,13 @@ export const ItemImageContainer = styled.div`
 		width: 55%;
 	}
 	@media (max-width: 700px) {
-		width: 80%;
+		width: 100%;
 	}
 `;
 export const ItemInfo = styled.div`
 	text-align: center;
 	font-size: 14px;
-	width: 20%;
+	width: 30%;
 	margin: 10px;
 	button {
 		color: white;
@@ -46,7 +46,7 @@ export const ItemInfo = styled.div`
 			border: 2px solid black;
 		}
 	}
-	@media (max-width: 900px) {
+	@media (max-width: 1000px) {
 		width: 40%;
 	}
 	@media (max-width: 700px) {

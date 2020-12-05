@@ -17,6 +17,7 @@ const App = (props) => {
     <>
       <Provider store={Store}>
         <GLobelStyle />
+        <All.ItemALert />
         <All.Header />
         <main>
           <Switch>
@@ -32,7 +33,6 @@ const App = (props) => {
             <Route path="*" component={ErrorPage} />
           </Switch>
         </main>
-        <All.ItemALert />
         <All.Footer />
       </Provider>
     </>
