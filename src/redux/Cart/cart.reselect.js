@@ -17,3 +17,6 @@ export const SelecTotal = createSelector(selectCart, (cart) =>
 		0
 	)
 );
+
+
+export const SelectAdded = createSelector([selectCart], (Cart) => Cart.added);

@@ -1,7 +1,12 @@
 import Store from "./store";
 import { selectItemsForPreview } from "./Shop/shop.reselect";
 import { AddSearchField, CloseModal } from "./Shop/shop.action";
-import { OpenAndCloseModel, AddToCart, RemoveItem } from "./Cart/cart.action";
+import {
+  OpenAndCloseModel,
+  AddToCart,
+  RemoveItem,
+  RemoveALert,
+} from "./Cart/cart.action";
 import {
   createProfileAccount,
   SignInWithGoogleStart,
@@ -12,6 +17,7 @@ import {
   Selecquantitiy,
   SelectCartItems,
   SelecTotal,
+  SelectAdded,
 } from "./Cart/cart.reselect";
 
 export {
@@ -29,4 +35,6 @@ export {
   createProfileAccount,
   SignInWithGoogleStart,
   SignInWithEmailStart,
+  SelectAdded,
+  RemoveALert,
 };

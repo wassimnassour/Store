@@ -21,9 +21,7 @@ const App = (props) => {
         <main>
           <Switch>
             <Route exact path="/" component={HomePage} />
-
             <Route exact path="/product/:productName" component={Product} />
-
             <Route
               path="/collection/:CollectionName"
               component={CollectionPage}
@@ -34,6 +32,7 @@ const App = (props) => {
             <Route path="*" component={ErrorPage} />
           </Switch>
         </main>
+        <All.ItemALert />
         <All.Footer />
       </Provider>
     </>

@@ -1,6 +1,8 @@
 import React from "react";
-import { BagContainer } from "./cart.style";
 import { createStructuredSelector } from "reselect";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { BagContainer } from "./cart.style";
 import {
 	ItemDetailsContainer,
 	ItemContainer,
@@ -11,9 +13,9 @@ import {
 	SelectModal,
 	SelectCartItems,
 } from "../../redux/index";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+
 const Cart = ({ AddToCart, hidden, cartItems, OpenAndCloseModel }) => {
+	console.log(cartItems , "cartItems")
 	return (
 		<BagContainer hidden={hidden}>
 			<ItemContainer>
@@ -37,6 +39,7 @@ const Cart = ({ AddToCart, hidden, cartItems, OpenAndCloseModel }) => {
 					</Link>
 				</div>
 			</ItemContainer>
+
 		</BagContainer>
 	);
 };

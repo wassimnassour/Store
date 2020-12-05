@@ -9,6 +9,6 @@ body {
 	box-sizing: border-box;
 }
 main{
-	min-height:83vh;
+	min-height:90vh;
 }
 `;
